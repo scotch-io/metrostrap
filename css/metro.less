@@ -1,0 +1,940 @@
+/* =============================================================================================
+ * =VARIABLES
+================================================================================================= */
+/*
+ * Colors
+ */
+@black				: #000; 
+@white				: #FFF;
+
+@gray				: #CCC;
+@grayLight			: lighten(@gray, 5%);
+@grayLighter		: lighten(@gray, 10%);
+@grayLightest		: lighten(@gray, 15%);
+
+@grayDark			: darken(@gray, 10%);
+@grayDarker			: darken(@gray, 25%);
+@grayDarkest		: darken(@gray, 50%);
+
+@blackLight			: lighten(@black, 5%);
+@blackLighter 		: lighten(@black, 10%);
+@blackLightest		: ligthen(@black, 15%);
+
+/*
+ * Fonts
+ */
+@fontSize			: 14px;
+@lineHeight			: 1.5;
+@fontColor			: @grayDarkest;
+@fontColorLight		: lighten(@fontColor, 15%);
+
+/*
+ * Headers
+ */
+@headerColor		: @black; 
+@headerColorLight	: lighten(@headerColor, 15%);
+
+/*
+ * Links
+ */
+@linkColor			: #227BD4;
+@linkColorHover		: darken(@linkColor, 15%);
+@linkColorActive	: lighten(@linkColor, 15%);
+
+@textHighlightColor	: #447099;
+
+/* =============================================================================================
+ * =GRID
+================================================================================================ */
+
+/*
+ * Formula to calculate widths for both fixed and fluid grids
+ */
+.calculateWidth (@combine, @margin, @width: 100%) {
+	@columns		: 12;
+	@totalMargin	: (@columns - 1) * @margin;
+	@columnWidth	: (@width - @totalMargin) / @columns;
+	@columnSize		: (@columnWidth * @combine) + (@margin * (@combine - 1));
+	float			: left;
+	margin-left		: @margin;
+	width			: @columnSize;
+}
+
+.calculateOffset (@combine, @margin, @width: 100%) {
+	@columns		: 12;
+	@totalMargin	: (@columns - 1) * @margin;
+	@columnWidth	: (@width - @totalMargin) / @columns;
+	@columnSize		: (@columnWidth * @combine) + (@margin * @combine);
+	@marginOffset	: @columnSize;
+	margin-left		: @marginOffset;
+}
+
+.container-fluid 					{
+	width:80%;
+	@margin			: 2%;
+	.span1			{ .calculateWidth(1, @margin); }
+	.span2			{ .calculateWidth(2, @margin); }
+	.span3			{ .calculateWidth(3, @margin); }
+	.span4			{ .calculateWidth(4, @margin); }
+	.span5			{ .calculateWidth(5, @margin); }
+	.span6			{ .calculateWidth(6, @margin); }
+	.span7			{ .calculateWidth(7, @margin); }
+	.span8			{ .calculateWidth(8, @margin); }
+	.span9			{ .calculateWidth(9, @margin); }
+	.span10			{ .calculateWidth(10, @margin); }
+	.span11			{ .calculateWidth(11, @margin); }
+	.span12			{ .calculateWidth(12, @margin); }
+
+	.offset1		{ .calculateOffset(1, @margin); }
+	.offset2		{ .calculateOffset(2, @margin); }
+	.offset3		{ .calculateOffset(3, @margin); }
+	.offset4		{ .calculateOffset(4, @margin); }
+	.offset5		{ .calculateOffset(5, @margin); }
+	.offset6		{ .calculateOffset(6, @margin); }
+	.offset7		{ .calculateOffset(7, @margin); }
+	.offset8		{ .calculateOffset(8, @margin); }
+	.offset9		{ .calculateOffset(9, @margin); }
+	.offset10		{ .calculateOffset(10, @margin); }
+	.offset11		{ .calculateOffset(11, @margin); }
+	.offset12		{ .calculateOffset(12, @margin); } 
+
+	/* calculates widths if you want a certain margin between tiles */
+	.spacing-small 		{ 
+		@margin			: 0.5%;
+		.span1 			{ .calculateWidth(1, @margin); }
+		.span2 			{ .calculateWidth(2, @margin); }
+		.span3 			{ .calculateWidth(3, @margin); }
+		.span4 			{ .calculateWidth(4, @margin); }
+		.span5 			{ .calculateWidth(5, @margin); }
+		.span6 			{ .calculateWidth(6, @margin); }
+		.span7 			{ .calculateWidth(7, @margin); }
+		.span8 			{ .calculateWidth(8, @margin); }
+		.span9 			{ .calculateWidth(9, @margin); }
+		.span10 		{ .calculateWidth(10, @margin); }
+		.span11 		{ .calculateWidth(11, @margin); }
+		.span12			{ .calculateWidth(12, @margin); }
+		.first 			{ margin-left:0; }
+	}
+	.spacing-medium		{ 
+		@margin			: 1%;
+		.span1 			{ .calculateWidth(1, @margin); }
+		.span2 			{ .calculateWidth(2, @margin); }
+		.span3 			{ .calculateWidth(3, @margin); }
+		.span4 			{ .calculateWidth(4, @margin); }
+		.span5 			{ .calculateWidth(5, @margin); }
+		.span6 			{ .calculateWidth(6, @margin); }
+		.span7 			{ .calculateWidth(7, @margin); }
+		.span8 			{ .calculateWidth(8, @margin); }
+		.span9 			{ .calculateWidth(9, @margin); }
+		.span10 		{ .calculateWidth(10, @margin); }
+		.span11 		{ .calculateWidth(11, @margin); }
+		.span12			{ .calculateWidth(12, @margin); }
+		.first 			{ margin-left:0; }
+	}
+}
+
+.container-fixed					{
+	width:960px;
+	@width			: 960px; 
+	@margin			: 20px;
+	.span1 			{ .calculateWidth(1, @margin, @width); }
+	.span2 			{ .calculateWidth(2, @margin, @width); }
+	.span3 			{ .calculateWidth(3, @margin, @width); }
+	.span4 			{ .calculateWidth(4, @margin, @width); }
+	.span5 			{ .calculateWidth(5, @margin, @width); }
+	.span6 			{ .calculateWidth(6, @margin, @width); }
+	.span7 			{ .calculateWidth(7, @margin, @width); }
+	.span8 			{ .calculateWidth(8, @margin, @width); }
+	.span9 			{ .calculateWidth(9, @margin, @width); }
+	.span10 		{ .calculateWidth(10, @margin, @width); }
+	.span11 		{ .calculateWidth(11, @margin, @width); }
+	.span12			{ .calculateWidth(12, @margin, @width); }
+
+	.offset1		{ .calculateOffset(1, @margin, @width); }
+	.offset2		{ .calculateOffset(2, @margin, @width); }
+	.offset3		{ .calculateOffset(3, @margin, @width); }
+	.offset4		{ .calculateOffset(4, @margin, @width); }
+	.offset5		{ .calculateOffset(5, @margin, @width); }
+	.offset6		{ .calculateOffset(6, @margin, @width); }
+	.offset7		{ .calculateOffset(7, @margin, @width); }
+	.offset8		{ .calculateOffset(8, @margin, @width); }
+	.offset9		{ .calculateOffset(9, @margin, @width); }
+	.offset10		{ .calculateOffset(10, @margin, @width); }
+	.offset11		{ .calculateOffset(11, @margin, @width); }
+	.offset12		{ .calculateOffset(12, @margin, @width); }
+
+	/* calculates widths if you want a certain margin between tiles */
+	.spacing-small 		{ 
+		@margin			: 3px;
+		.span1 			{ .calculateWidth(1, @margin, @width); }
+		.span2 			{ .calculateWidth(2, @margin, @width); }
+		.span3 			{ .calculateWidth(3, @margin, @width); }
+		.span4 			{ .calculateWidth(4, @margin, @width); }
+		.span5 			{ .calculateWidth(5, @margin, @width); }
+		.span6 			{ .calculateWidth(6, @margin, @width); }
+		.span7 			{ .calculateWidth(7, @margin, @width); }
+		.span8 			{ .calculateWidth(8, @margin, @width); }
+		.span9 			{ .calculateWidth(9, @margin, @width); }
+		.span10 		{ .calculateWidth(10, @margin, @width); }
+		.span11 		{ .calculateWidth(11, @margin, @width); }
+		.span12			{ .calculateWidth(12, @margin, @width); }
+		.first 			{ margin-left:0; }
+	}
+
+	.spacing-medium		{ 
+		@margin			: 10px;
+		.span1 			{ .calculateWidth(1, @margin, @width); }
+		.span2 			{ .calculateWidth(2, @margin, @width); }
+		.span3 			{ .calculateWidth(3, @margin, @width); }
+		.span4 			{ .calculateWidth(4, @margin, @width); }
+		.span5 			{ .calculateWidth(5, @margin, @width); }
+		.span6 			{ .calculateWidth(6, @margin, @width); }
+		.span7 			{ .calculateWidth(7, @margin, @width); }
+		.span8 			{ .calculateWidth(8, @margin, @width); }
+		.span9 			{ .calculateWidth(9, @margin, @width); }
+		.span10 		{ .calculateWidth(10, @margin, @width); }
+		.span11 		{ .calculateWidth(11, @margin, @width); }
+		.span12			{ .calculateWidth(12, @margin, @width); }
+		.first 			{ margin-left:0; }
+	}
+}
+
+/*
+ * Setting default container attr
+ * Removing margin from .first element
+ */
+.container-fixed, .container-fluid						{ margin: 0 auto; position: relative; 
+	box-sizing			: content-box;
+	-moz-box-sizing		: content-box;
+	-webkit-box-sizing	: content-box;
+	.clearfix();
+}
+.container-fixed .first, .container-fluid .first 		{ margin-left: 0; }
+
+/* Clearfix */
+.clearfix() {
+	*zoom												: 1;		/* Fixes IE6/7 Resizing */
+	&:before, &:after 									{ content:''; display:table; }
+	&:after												{ clear:both; }
+}
+
+.row													{ margin-bottom:20px; position:relative; .clearfix(); }
+
+/* =============================================================================================
+ * =MIXINS
+================================================================================================ */
+/* Rounded Corners */
+.border-radius (@radius: 4px) {
+	border-radius			: @radius;
+	-moz-border-radius		: @radius;
+	-webkit-border-radius	: @radius;
+}
+.border-radius-all (@topleft: 4px, @topright: 4px, @bottomleft: 4px, @bottomright: 4px) {
+	border-radius			: @topleft @topright @bottomleft @bottomright;
+	-moz-border-radius		: @topleft @topright @bottomleft @bottomright;
+	-webkit-border-radius	: @topleft @topright @bottomleft @bottomright;
+}
+
+/* Opacity */
+.opacity (@opacity: 0.5) {
+	@ieOpacity			: @opacity * 100;
+	opacity				: @opacity;
+	-moz-opacity		: @opacity;
+	-webkit-opacity		: opacity;
+	-ms-filter			: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{ieOpacity})"; /* IE 8 */
+	filter				: ~"alpha(opacity = @{ieOpacity})"; /* IE 5-7 */
+}
+
+/* Background RGBA */
+.background-alpha(@color, @alpha) {
+	@acolor			: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+	@iecolor 		: argb(@acolor);
+
+	background-color	: @color; /* fallback color */
+	background-color	: @acolor;
+
+	/* IE */
+	background-color	: transparent\9;
+	filter				: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr= @{iecolor}, endColorstr= @{iecolor})";
+	zoom:1; 
+}
+
+/* Box Shadow */
+.box-shadow (@x-size:10px, @y-size:10px, @blur:5px, @color: @black, @spread:0) {
+	box-shadow			: @x-size @y-size @blur @color;
+	-moz-box-shadow		: @x-size @y-size @blur @color;
+	-webkit-box-shadow	: @x-size @y-size @blur @color;
+}
+.box-shadow-inset (@x-size: 10px, @y-size: 10px, @blur: 5px, @color: @black, @spread:0) {
+	box-shadow			: inset @x-size @y-size @blur @color;
+	-moz-box-shadow		: inset @x-size @y-size @blur @color;
+	-webkit-box-shadow	: inset @x-size @y-size @blur @color;
+}
+	
+/* Gradients */
+.gradient-vertical (@firstColor: #FFF, @secondColor: #DDD) {
+	background	: @firstColor; /* Fallback solid color for old browsers */
+	background	: linear-gradient(to bottom, @firstColor 0%, @secondColor 100%); /* W3C */
+	background	: -moz-linear-gradient(top, @firstColor 0%, @secondColor 100%); /* FF 3.6+ */
+	background	: -ms-linear-gradient(top, @firstColor 0%, @secondColor 100%); /* IE 10+ */
+	background	: -o-linear-gradient(top, @firstColor 0%, @secondColor 100%); /* Opera 11.10+ */
+	background	: -webkit-linear-gradient(top, @firstColor 0%,@secondColor 100%); /* Chrome 10+, Safari 5.1+ */
+	background	: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@firstColor), color-stop(100%,@secondColor)); /* Chrome, Safari 4+ */
+	filter		: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr= '@{firstColor}', endColorstr= '@{secondColor}', GradientType=0)"; /* IE 6-9 */
+}
+
+.gradient-horizontal (@firstColor: #FFF, @secondColor: #DDD) {
+	background	: @firstColor; /* Fallback solid color for old browsers */
+	background	: linear-gradient(to right, @firstColor 0%, @secondColor 100%); /* W3C */
+	background	: -moz-linear-gradient(left,  @firstColor 0%, @secondColor 100%); /* FF 3.6+ */
+	background	: -ms-linear-gradient(left, @firstColor 0%, @secondColor 100%); /* IE 10+ */
+	background	: -o-linear-gradient(left, @firstColor 0%, @secondColor 100%); /* Opera 11.10+ */
+	background	: -webkit-linear-gradient(left,  @firstColor 0%,@secondColor 100%); /* Chrome 10+, Safari 5.1+ */
+	background	: -webkit-gradient(linear, left top, right top, color-stop(0%,@firstColor), color-stop(100%,@secondColor)); /* Chrome, Safari 4+ */
+	filter		: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr= '@{firstColor}', endColorstr= '@{secondColor}', GradientType=1)"; /* IE 6-9 */
+}
+
+.transition (@type:all, @time:0.2s, @ease:ease) {
+    transition			: @type @time @ease;
+    -moz-transition		: @type @time @ease;
+    -webkit-transition	: @type @time @ease;
+    -o-transition		: @type @time @ease;
+}
+
+/* Animations */
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+	-moz-animation		: @name, @duration, @delay, @ease;
+	-ms-animation		: @name, @duration, @delay, @ease;
+	-webkit-animation	: @name, @duration, @delay, @ease;
+}
+
+.transform (@deg) {
+	transform			: @deg;
+	-moz-transform		: @deg;
+	-ms-transform		: @deg;
+	-o-transform		: @deg;
+	-webkit-transform	: @deg;
+}
+
+.scale (@multiplier) {
+	transform			: scale(@deg);
+	-moz-transform		: scale(@deg);
+	-ms-transform		: scale(@deg);
+	-o-transform		: scale(@deg);
+	-webkit-transform	: scale(@deg);
+}
+
+.rotate (@deg) {
+	-moz-transform		: rotate(@deg);
+	-ms-transform		: rotate(@deg);
+	-o-transform		: rotate(@deg);
+	-webkit-transform	: rotate(@deg);
+}
+
+.skew (@deg, @deg2) {
+	transform			: skew(@deg);
+	-moz-transform		: skew(@deg);
+	-ms-transform		: skew(@deg);
+	-o-transform		: skew(@deg);
+	-webkit-transform	: skew(@deg);
+}
+
+/* moves element from one position to the next */
+.translate (@x, @y: 0) {
+	translate			: translate(@deg);
+	-moz-transform		: translate(@deg);
+	-ms-transform		: translate(@deg);
+	-o-transform		: translate(@deg);
+	-webkit-transform	: translate(@deg);
+}
+
+.translate3d (@x, @y: 0, @z: 0) {
+	-moz-transform		: translate3d(@x, @y, @z);
+	-ms-transform		: translate3d(@x, @y, @z);
+	-o-transform		: translate3d(@x, @y, @z);
+	-webkit-transform	: translate3d(@x, @y, @z);
+}
+
+.transform-origin (@x: center, @y: center) {
+	-moz-transform		: @x @y;
+	-ms-transform		: @x @y;
+	-o-transform		: @x @y;
+	-webkit-transform	: @x @y;
+}
+
+/* =============================================================================================
+ * =FOUNDATION CSS 
+ *
+ * CSS Reset in addition to normalize.css
+ * 
+================================================================================================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video			{ border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; 
+	box-sizing			: border-box;
+	-moz-box-sizing		: border-box;
+	-webkit-box-sizing	: border-box;
+}
+
+/* --------------------------------------------------------------------------------------
+ * =Base  
+------------------------------------------------------------------------------------------ */
+
+/* Adds scrollbar at all times to stop website shifting horizontally when switching between pages */
+html						{ overflow-y: scroll; }
+
+/* Fix positioning for bullets */
+ul, ol						{ list-style-position: inside; }
+
+/* --------------------------------------------------------------------------------------
+ * =Typography  
+------------------------------------------------------------------------------------------ */
+html, body, button, input, select, textarea			{ color: @fontColor; font-family: 'Segoe UI', 'Lato', Arial, Helvetica, sans-serif; font-size: @fontSize; line-height: @lineHeight; }
+p													{ margin: 10px 0; }
+
+/*
+ * Styling headers with default Segoe UI Light
+ * Headers fall back to Lato if Segoe UI Light is not present
+ */
+h1, h2, h3, h4, h5, h6								{ font-family: 'Segoe UI Light', 'Lato', Arial, Helvetica, sans-serif; font-weight: normal; }
+h1 small, h2 small, h3 small, h4 small, h5 small	{ color: @gray; }
+
+/* Responsive styling for headers */
+h1							{ color: @headerColor; font-size: 315%; }
+h2							{ color: @headerColor; font-size: 260%; }
+h3							{ color: @headerColorLight; font-size: 190%; }
+h4                          { color: @headerColorLight; font-size: 160%; }
+h5							{ color: @headerColorLight; font-size: 120%; }
+h6							{ color: @headerColorLight; font-size: 100%; }
+
+/* Text highlight colors */
+::selection                 { background-color: @textHighlightColor; color: @white; text-shadow: none; }
+::-moz-selection		    { background-color: @textHighlightColor; color: @white; text-shadow: none; }
+
+em, i						{ font-style: italic; }
+b, strong 					{ color: @black; }
+
+/*
+ * Changes default code font to Consolas
+ * Works better with the Segoe UI default font
+ */
+pre, code, kbd, samp 		{ color: @black; font-family: Consolas, Monaco, monospace; font-size: 12px; }
+
+/* --------------------------------------------------------------------------------------
+ * =Links  
+------------------------------------------------------------------------------------------ */
+
+/* Addresses outline inconsistencies. Removes border and dotted lines around links and images inside links. */
+a 		    				{ outline: 0; }
+
+/* Link colors */
+a							{ color: @linkColor; }
+a:hover						{ color: @linkColorHover; }
+a:active					{ color: @linkColorActive; }
+a:link						{ -webkit-tap-highlight-color: @linkColorActive; }
+
+/* --------------------------------------------------------------------------------------
+ * =Forms  
+------------------------------------------------------------------------------------------ */
+
+/* Indicate that <label> will shift focus to the associated form element */
+label												{ cursor: pointer; }
+
+/* Input Placeholder */
+::-webkit-input-placeholder							{ color: @gray; }
+input:-moz-placeholder								{ box-shadow: none !important; color: @gray; }
+textarea:-moz-placeholder							{ color: @gray; }
+
+/* =============================================================================================
+ * =PRINT STYLING
+ *  
+ * Removes styling and allows for a clean printable site.
+ *
+================================================================================================= */
+@media print {
+	* 						{ background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; } 
+	a, a:visited 			{ text-decoration: underline; }
+	a[href]:after 			{ content: " (" attr(href) ")"; }
+	abbr[title]:after 		{ content: " (" attr(title) ")"; }
+	pre, blockquote			{ border: 1px solid #999; page-break-inside: avoid; }
+	thead 					{ display: table-header-group; }
+	tr, img 				{ page-break-inside: avoid; }
+	img 					{ max-width: 100% !important; }
+	@page 					{ margin: 0.5cm; }
+	p, h2, h3 				{ orphans: 3; widows: 3; }
+	h2, h3 					{ page-break-after: avoid; }
+}
+
+/* =============================================================================================
+ * =VARIABLES
+================================================================================================ */
+	
+	@magenta	: #FF0097;	@magenta-light	: #FF41B2;
+	@purple		: #A200FF;	@purple-light	: #BB46FF;
+	@teal		: #00ABA9;	@teal-light		: #14D8D6;
+	@lime		: #8CBF26;	@lime-light		: #A9E13A;
+	@brown		: #A05000;	@brown-light	: #BF650B;
+	@pink		: #E671B8;	@pink-light		: #F68ACC;
+	@mango		: #F09609;	@mango-light	: #F6A931;
+	@blue		: #1BA1E2;	@blue-light		: #29B4F8;
+	@red		: #E51400;	@red-light		: #FE4432;
+	@green		: #339933;	@green-light	: #4FC24F;
+
+	/*
+	 * Theme Colors
+	 */
+	@primary-color			: @blue;	
+	@primary-color-light	: @blue-light;
+
+/* =============================================================================================
+ * =TYPOGRAPHY
+================================================================================================ */
+.text-left							{ text-align: left; }
+.text-center						{ text-align: center; }
+.text-right							{ text-align: right; }
+
+code 								{ background: @grayLighter; color: @primary-color; margin: 15px 0; padding: 4px 8px; }
+pre 								{ background: @grayLighter; color: @primary-color; padding: 10px 20px; }
+
+/* =============================================================================================
+ * =COLORS
+================================================================================================ */
+.color-white						{ color: @white; }
+.color-black						{ color: @black; }
+
+.color-magenta						{ color: @magenta; }
+.color-purple						{ color: @purple; }
+.color-teal							{ color: @teal; }
+.color-lime							{ color: @lime; }
+.color-brown						{ color: @brown; }
+.color-pink							{ color: @pink; }
+.color-mango						{ color: @mango; }
+.color-blue							{ color: @blue; }
+.color-red							{ color: @red; }
+.color-green						{ color: @green; }
+.color-magenta-light				{ color: @magenta; }
+.color-purple-light					{ color: @purple; }
+.color-teal-light					{ color: @teal; }
+.color-lime-light					{ color: @lime; }
+.color-brown-light					{ color: @brown; }
+.color-pink-light					{ color: @pink; }
+.color-mango-light					{ color: @mango; }
+.color-blue-light					{ color: @blue; }
+.color-red-light					{ color: @red; }
+.color-green-light					{ color: @green; }
+
+.background-white					{ background: @white; }
+.background-black					{ background: @black; }
+.background-gray					{ background: @gray; }
+.background-grayLight				{ background: @grayLight; }
+.background-grayLighter				{ background: @grayLighter; }
+.background-grayLightest			{ background: @grayLightest; }
+.background-grayDark				{ background: @grayDark; }
+.background-grayDarker				{ background: @grayDarker; }
+.background-grayDarkest				{ background: @grayDarkest; }
+
+.background-magenta					{ background: @magenta; }
+.background-purple					{ background: @purple; }
+.background-teal					{ background: @teal; }
+.background-lime					{ background: @lime; }
+.background-brown					{ background: @brown; }
+.background-pink					{ background: @pink; }
+.background-mango					{ background: @mango; }
+.background-blue					{ background: @blue; }
+.background-red						{ background: @red; }
+.background-green					{ background: @green; }
+.background-magenta-light			{ background: @magenta; }
+.background-purple-light			{ background: @purple; }
+.background-teal-light				{ background: @teal; }
+.background-lime-light				{ background: @lime; }
+.background-brown-light				{ background: @brown; }
+.background-pink-light				{ background: @pink; }
+.background-mango-light				{ background: @mango; }
+.background-blue-light				{ background: @blue; }
+.background-red-light				{ background: @red; }
+.background-green-light				{ background: @green; }
+
+/* =============================================================================================
+ * =FORMS
+================================================================================================ */
+
+/* Grid Inside Forms */
+.container-fixed form, .container-fluid form	{ 
+	.span1 			{ margin-left:0; }
+	.span2 			{ margin-left:0; }
+	.span3 			{ margin-left:0; }
+	.span4 			{ margin-left:0; }
+	.span5 			{ margin-left:0; }
+	.span6 			{ margin-left:0; }
+	.span7 			{ margin-left:0; }
+	.span8 			{ margin-left:0; }
+	.span9 			{ margin-left:0; }
+	.span10 		{ margin-left:0; }
+	.span11 		{ margin-left:0; }
+	.span12			{ margin-left:0; }
+}
+
+textarea, 
+input[type="text"], 
+input[type="password"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="date"], 
+input[type="month"], 
+input[type="time"], 
+input[type="week"], 
+input[type="number"], 
+input[type="email"], 
+input[type="url"], 
+input[type="search"], 
+input[type="tel"], 
+input[type="color"]					{ background:@grayLightest; border:2px solid @primary-color; border-left:none; border-right:none; border-top:none; padding: 7px 14px; 
+	box-sizing		: border-box;
+	-moz-box-sizing		: border-box;
+	-webkit-box-sizing	: border-box;	
+	.transition();
+}
+
+textarea:hover, 
+input[type="text"]:hover, 
+input[type="password"]:hover, 
+input[type="datetime"]:hover, 
+input[type="datetime-local"]:hover, 
+input[type="date"]:hover, 
+input[type="month"]:hover, 
+input[type="time"]:hover, 
+input[type="week"]:hover, 
+input[type="number"]:hover, 
+input[type="email"]:hover, 
+input[type="url"]:hover, 
+input[type="search"]:hover, 
+input[type="tel"]:hover, 
+input[type="color"]:hover			{ outline:0; }
+
+textarea:focus, 
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, 
+input[type="date"]:focus, 
+input[type="month"]:focus, 
+input[type="time"]:focus, 
+input[type="week"]:focus, 
+input[type="number"]:focus, 
+input[type="email"]:focus, 
+input[type="url"]:focus, 
+input[type="search"]:focus, 
+input[type="tel"]:focus, 
+input[type="color"]:focus			{ outline:none; }
+
+input[type=submit]					{ background: @primary-color; border: none; color: @white; font-size: 90%; margin:5px 0; padding: 7px 14px; 
+	.transition();
+}
+input[type=submit]:hover			{ background: @primary-color-light; }
+input[type=submit]:focus			{ outline:none; }
+
+textarea 							{ min-height:70px; }
+label 								{ line-height:1; }
+input[type=checkbox]				{ cursor:pointer; height:13px; float:left; width:13px; margin:0; padding:0; }
+
+.form-row                           { margin-bottom: 15px; .clearfix(); }
+
+/* Stacked Form */
+.form-stacked label                 { display: block; margin-bottom:5px; }
+.form-stacked button, 
+.form-stacked input[type=submit]	{ display: block; margin-top:10px; }
+
+/* Horizontal Form */
+.form-horizontal label 				{ float: left; margin-right: 15px; text-align: right; width: 125px; }
+.form-horizontal input 				{  }
+.form-horizontal .control 			{ margin-left:140px; }
+
+/* Sizing */
+.input-mini							{  }
+.input-small						{  }
+.input-medium						{  }
+.input-large						{  }
+.input-supersize					{  }
+
+/* Checkboxes */
+.switch								{ height:100px; position:relative; width:100px; }
+.switch input 						{ top:0; right:0; bottom:0; left:0; opacity:0; z-index:100; position:absolute; width:100%; height:100%; cursor:pointer; }
+.switch span 						{ background:#EAEAEA; display:block; height:100%; position:relative; width:100%; 
+	.border-radius(50%);
+	box-shadow: 
+        0 3px 5px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -5px 5px rgba(100,100,100,0.1),
+        inset 0 5px 5px rgba(255,255,255,0.3);
+}
+.switch span:after 				{ content:''; position:absolute; z-index:-1; top:-8%; right:-8%; left:-8%; border-radius:inherid; background:#DDD;
+	.gradient-vertical(#CCC, #FFF);
+	box-shadow: 
+        inset 0 2px 1px rgba(0,0,0,0.15),
+        0 2px 5px rgba(200,200,200,0.1);
+}
+.switch span:before				{ content:''; position:absolute; width:20%; height:20%; left:40%; top:40%; border-radius:inherit; background:#969696;
+	background:radial-gradient(40%, 35%, #CCC, #969696 60%);
+	 box-shadow:
+        inset 0 2px 4px 1px rgba(0,0,0,0.3),
+        0 1px 0 rgba(255,255,255,1),
+        inset 0 1px 0 white;
+}
+.switch input:checked ~ span			{ background:#E5E5E5; background:linear-gradient(#DEDEDE, #FDFDFD); }
+.switch input:checked ~ span:before		{ background:#25D025; background:radial-gradient(40%, 35%, #5AEF5A, #25D025 60%);
+	box-shadow:
+        inset 0 3px 5px 1px rgba(0,0,0,0.1),
+        0 1px 0 rgba(255,255,255,0.4),
+        0 0 10px 2px rgba(0, 210, 0, 0.5);
+}
+
+.checkbox-button									{ position:relative; vertical-align:middle; }
+	.checkbox-button input, .checkbox-button span 	{ height:13px; width:13px; }
+	.checkbox-button input 							{ top:2px; right:0; bottom:0; left:0; opacity:0; z-index:100; position:absolute; }
+	.checkbox-button span 							{ border:1px solid black; display:inline-block; padding:2px; position:relative; }
+	.checkbox-button input:checked ~ span:after 	{ content:''; position:absolute; background:@primary-color; height:80%; width:85%; top:10%; left:5%; }
+	.checkbox-button label							{ display:inline-block; }
+
+.checkbox-round										{ position:relative; vertical-align:middle; }
+	.checkbox-round input, .checkbox-round span		{ height:13px; width:13px; }
+	.checkbox-round input							{ bottom:0; left:0; opacity:0; position:absolute; right:0; top:2px; } 
+
+/* Radio Buttons */
+.radio-button 										{ border:1px solid @gray; float:left; height:42px; position:relative; vertical-align:middle; }
+	.radio-button input, .radio-button span 		{ height:40px; width:100px; }
+	.radio-button input 							{ cursor:pointer; opacity:0; position:absolute; top:0; left:0; z-index:100; }
+	.radio-button span 								{ .gradient-vertical(@grayLightest, @grayLighter); display:inline-block; position:relative; }
+	.radio-button label 							{ left:18%; position:absolute; top:30%; }
+	.radio-button input:checked ~ span				{ .gradient-vertical(@grayLighter, @grayLightest); .box-shadow-inset(2px, 2px, 2px, 0, @gray); }
+
+/* Buttons ====================================================================================== */
+button 						{ background: @primary-color; border: none; color: @white; font-size: 90%; padding: 5px 12px; 
+	.transition();
+}
+button:hover				{ background: @primary-color-light; }
+
+/* Sizes */
+.button-mini				{ font-size: 75%; padding: 2px 5px; }
+.button-small				{ font-size: 90%; padding: 5px 12px; }
+.button-medium				{ font-size: 100%; padding: 10px 15px; }
+.button-large				{ font-size: 125%; padding: 15px 30px; }
+.button-supersize			{ font-size: 200%; padding: 30px 60px; }
+
+/* Disabled */
+
+
+/* Background Colors */
+input.background-white, button.background-white						{ background: @white; }
+input.background-magenta, button.background-magenta					{ background: @magenta; }
+input.background-purple, button.background-purple					{ background: @purple; }
+input.background-teal, button.background-teal						{ background: @teal; }
+input.background-lime, button.background-lime						{ background: @lime; }
+input.background-brown, button.background-brown						{ background: @brown; }
+input.background-pink, button.background-pink						{ background: @pink; }
+input.background-mango, button.background-mango						{ background: @mango; }
+input.background-blue, button.background-blue						{ background: @blue; }
+input.background-red, button.background-red							{ background: @red; }
+input.background-green, button.background-green						{ background: @green; }
+input.background-magenta:hover, button.background-magenta:hover		{ background: @magenta-light; }
+input.background-purple:hover, button.background-purple:hover		{ background: @purple-light; }
+input.background-teal:hover, button.background-teal:hover			{ background: @teal-light; }
+input.background-lime:hover, button.background-lime:hover			{ background: @lime-light; }
+input.background-brown:hover, button.background-brown:hover			{ background: @brown-light; }
+input.background-pink:hover, button.background-pink:hover			{ background: @pink-light; }
+input.background-mango:hover, button.background-mango:hover			{ background: @mango-light; }
+input.background-blue:hover, button.background-blue:hover			{ background: @blue-light; }
+input.background-red:hover, button.background-red:hover				{ background: @red-light; }
+input.background-green:hover, button.background-green:hover			{ background: @green-light; }
+
+/* =============================================================================================
+ * =ICONS
+================================================================================================ */
+/*.icon span 			{ margin-right:0.1em; }
+.icon svg				{ margin-bottom:-0.5em; padding:0.3em; }*/
+
+/* Size */
+.icon-tiny svg 			{ border-size: 1px; height: 16px; margin-bottom: -0.2em; width: 16px; }
+.icon-small svg 		{ border-size: 1px; height: 24px; margin-bottom: -0.3em; width: 24px; }
+.icon-medium svg		{ border-size: 1px; height: 32px; margin-bottom: -0.4em; width: 32px; }
+.icon-large svg			{ border-size: 1px; height: 48px; margin-bottom: -0.5em; width: 48px; }
+.icon-supersize svg		{ border-size: 1px; height: 64px; margin-bottom: -0.5em; width: 64px; }
+
+/* Background Shape */
+.circle svg 			{ border: 0.1em solid @black; border-radius: 1000em; }
+
+/* Colors */
+.icon-white svg			{ border-color: @white; fill: @white; }
+.icon-black svg			{ border-color: @black; fill: @black; }
+.icon-magenta svg		{ border-color: @magenta; fill: @magenta; }
+.icon-purple svg		{ border-color: @purple; fill: @purple; }
+.icon-teal svg			{ border-color: @teal; fill: @teal; }	
+.icon-lime svg			{ border-color: @lime; fill: @lime; }	
+.icon-brown svg			{ border-color: @brown; fill: @brown; }
+.icon-pink svg			{ border-color: @pink; fill: @pink; }	
+.icon-mango svg			{ border-color: @mango; fill: @mango; }
+.icon-blue svg			{ border-color: @blue; fill: @blue; }	
+.icon-red svg			{ border-color: @red; fill: @red; }	
+.icon-green svg			{ border-color: @green; fill: @green; }
+
+/* =============================================================================================
+ * =TABLES
+================================================================================================ */
+table 					{ width: 100%; }
+thead 					{ font-weight: bold; }
+th, td 					{ padding: 5px 10px; }
+
+/* Normal Table */
+.table tr 				{ border-bottom: 1px solid @grayLighter; }
+
+/* Bordered Table */
+.table-bordered			{ border-left: 1px solid @grayLighter; border-top: 1px solid @grayLighter; }
+	.table-bordered td	{ border-right: 1px solid @grayLighter; }
+
+/* Striped Table */
+.table-striped tbody tr:nth-child(odd)	{ background: @grayLightest; }
+
+/* Hovered Table */
+.table-hover tbody tr:hover 			{ background: @grayLightest; }
+
+/* Conditional Table */
+.success								{ background: @green-light; }
+.warning								{ background: @mango-light; }
+.error									{ background: @red-light; }
+
+/* =============================================================================================
+ * =NAVIGATION
+================================================================================================ */
+nav ul, nav ol			{ list-style: none; } 
+
+/* Horizontal */
+.nav-horizontal					{  
+	ul 					{  }
+	li					{ float: left; position: relative; }
+	li:hover > a 		{ background:@primary-color-light; color:#FFF; }
+	a 					{ display: block; padding: 10px 20px; text-decoration: none; }
+
+	/* Hover Shows Dropdown */
+	li:hover > ul 		{ display:block; }
+	li ul 				{ background:@grayDarkest; display:none; position:absolute; z-index:9000; }
+	li ul li 			{ display:block; float:none; }
+	li ul a 			{ height:auto; }
+}
+
+/* Vertical */
+.nav-vertical					{  
+	ul					{  }
+	li					{  }
+	a 					{  }
+}
+
+/* Slide Down */
+.nav-slider					{
+	background:@grayLightest; .clearfix();
+	& > ul 				{ position:relative; }
+	li 					{ float:left; padding:15px; }
+	a 					{  }
+
+	li ul 				{ background:@grayLighter; height:0; left:0; width:100%; }
+	li ul li 			{ float:left; }
+}
+
+/* Toggle Testing */
+#toggle-box 			{ background:@red; display:none; height:0px; }
+#toggle-ul 				{
+	position:relative; list-style:none;
+	li 				{ float:left; }
+	& > li > a 		{ background:@grayLighter; margin:0 10px; padding:5px 10px; }
+
+	li ul 			{ left:0; list-style:none; padding:10px; position:absolute; width:100%; }
+	li ul a 		{ background:@red; padding:5px 10px; }
+}
+
+/* Fixed */
+.nav-fixed				{ position: fixed; }
+
+/* Button Bar */
+
+/* =============================================================================================
+ * =TOAST MESSAGES
+================================================================================================ */
+.message 			{ padding:20px 0; text-align:center; }
+
+/* =============================================================================================
+ * =TOOLTIPS
+================================================================================================ */
+.message 				{ background:@red; color:#FFF; display:block; font-size:110%; margin:0 auto; padding:10px 0; position:fixed; text-align:center; z-index:9999; width:100%; }
+
+.message.success 		{ background:lighten(@green, 15%); }
+.message.warning 		{ background:lighten(@mango, 15%); }
+.message.error			{ background:lighten(@red, 15%); }
+.message p:last-child 	{ padding-bottom:0; }
+
+.message-close 							{ display:block; font-size:375%; position:absolute; right:6%; text-decoration:none; top:6%; }
+.message.success .message-close 		{ color:darken(@green, 10%); }
+.message.error .message-close 			{ color:darken(@red, 15%); }
+
+/* =============================================================================================
+ * =FOOTER
+================================================================================================ */
+
+/* Sticky Footer */
+.footer-sticky 			{  }
+
+/* =============================================================================================
+ * =RESPONSIVE
+================================================================================================ */
+/* Large Desktop */
+@media (min-width: 1200px) {
+
+
+	.visible-phone				{ display: none !important; }
+	.visible-tablet				{ display: none !important; }
+	.hidden-desktop				{ display: none !important; }
+}
+
+/* Small Desktop Screens + Tablets */
+@media (min-width: 768px) and (max-width: 979px) {
+
+
+	.visible-phone				{ display: none !important; }
+	.visible-desktop			{ display: none !important; }
+	.hidden-tablet				{ display: none !important; }
+}
+
+/* Phone Landscape and Smaller */
+@media (max-width: 767px) {
+	.container-fixed, .container-fluid		{ width: 95%; }
+	.container-fluid 					{
+		.span1			{ margin-left: 0; width: 100%; }
+		.span2			{ margin-left: 0; width: 100%; }
+		.span3			{ margin-left: 0; width: 100%; }
+		.span4			{ margin-left: 0; width: 100%; }
+		.span5			{ margin-left: 0; width: 100%; }
+		.span6			{ margin-left: 0; width: 100%; }
+		.span7			{ margin-left: 0; width: 100%; }
+		.span8			{ margin-left: 0; width: 100%; }
+		.span9			{ margin-left: 0; width: 100%; }
+		.span10			{ margin-left: 0; width: 100%; }
+		.span11			{ margin-left: 0; width: 100%; }
+		.span12			{ margin-left: 0; width: 100%; }
+	}
+
+	.visible-tablet				{ display: none !important; }
+	.visible-desktop			{ display: none !important; }
+	.hidden-phone				{ display: none !important; }
+}
+
+/* Phone Portrait */
+@media (max-width:480px) {
+
+}
