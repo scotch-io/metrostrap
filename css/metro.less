@@ -261,14 +261,14 @@
 
 /* Box Shadow */
 .box-shadow (@x-size:10px, @y-size:10px, @blur:5px, @color: @black, @spread:0) {
-	box-shadow			: @x-size @y-size @blur @color;
-	-moz-box-shadow		: @x-size @y-size @blur @color;
-	-webkit-box-shadow	: @x-size @y-size @blur @color;
+	box-shadow			: @x-size @y-size @blur @spread @color;
+	-moz-box-shadow		: @x-size @y-size @blur @spread @color;
+	-webkit-box-shadow	: @x-size @y-size @blur @spread @color;
 }
 .box-shadow-inset (@x-size: 10px, @y-size: 10px, @blur: 5px, @color: @black, @spread:0) {
-	box-shadow			: inset @x-size @y-size @blur @color;
-	-moz-box-shadow		: inset @x-size @y-size @blur @color;
-	-webkit-box-shadow	: inset @x-size @y-size @blur @color;
+	box-shadow			: inset @x-size @y-size @blur @spread @color;
+	-moz-box-shadow		: inset @x-size @y-size @blur @spread @color;
+	-webkit-box-shadow	: inset @x-size @y-size @blur @spread @color;
 }
 	
 /* Gradients */
