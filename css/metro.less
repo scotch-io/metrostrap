@@ -270,7 +270,7 @@
 	-moz-box-shadow		: inset @x-size @y-size @blur @spread @color;
 	-webkit-box-shadow	: inset @x-size @y-size @blur @spread @color;
 }
-	
+
 /* Gradients */
 .gradient-vertical (@firstColor: #FFF, @secondColor: #DDD) {
 	background	: @firstColor; /* Fallback solid color for old browsers */
@@ -317,11 +317,11 @@
 }
 
 .scale (@multiplier) {
-	transform			: scale(@deg);
-	-moz-transform		: scale(@deg);
-	-ms-transform		: scale(@deg);
-	-o-transform		: scale(@deg);
-	-webkit-transform	: scale(@deg);
+	transform			: scale(@multiplier);
+	-moz-transform		: scale(@multiplier);
+	-ms-transform		: scale(@multiplier);
+	-o-transform		: scale(@multiplier);
+	-webkit-transform	: scale(@multiplier);
 }
 
 .rotate (@deg) {
@@ -332,20 +332,20 @@
 }
 
 .skew (@deg, @deg2) {
-	transform			: skew(@deg);
-	-moz-transform		: skew(@deg);
-	-ms-transform		: skew(@deg);
-	-o-transform		: skew(@deg);
-	-webkit-transform	: skew(@deg);
+	transform			: skew(@deg, @deg2);
+	-moz-transform		: skew(@deg, @deg2);
+	-ms-transform		: skew(@deg, @deg2);
+	-o-transform		: skew(@deg, @deg2);
+	-webkit-transform	: skew(@deg, @deg2);
 }
 
 /* moves element from one position to the next */
 .translate (@x, @y: 0) {
-	translate			: translate(@deg);
-	-moz-transform		: translate(@deg);
-	-ms-transform		: translate(@deg);
-	-o-transform		: translate(@deg);
-	-webkit-transform	: translate(@deg);
+	translate			: translate(@x, @y);
+	-moz-transform		: translate(@x, @y);
+	-ms-transform		: translate(@x, @y);
+	-o-transform		: translate(@x, @y);
+	-webkit-transform	: translate(@x, @y);
 }
 
 .translate3d (@x, @y: 0, @z: 0) {
@@ -489,7 +489,7 @@ textarea:-moz-placeholder							{ color: @gray; }
 /* =============================================================================================
  * =VARIABLES
 ================================================================================================ */
-	
+
 	@magenta	: #FF0097;	@magenta-light	: #FF41B2;
 	@purple		: #A200FF;	@purple-light	: #BB46FF;
 	@teal		: #00ABA9;	@teal-light		: #14D8D6;
