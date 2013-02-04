@@ -20,13 +20,14 @@
 		
 	<!-- stylesheet stuffs -->
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic"> <!-- Fallback to Lato if Segoe UI is not on user's computer -->
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet/less" href="css/style.less">
-	<link rel="stylesheet/less" href="css/docs.less">
+	<link rel="stylesheet" href="css/docs/normalize.css">
+	<link rel="stylesheet" href="css/docs/monokai.css">
+	<link rel="stylesheet/less" href="css/docs/docs.less">
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script>less = { env : 'development' };</script>
 	<script src="js/less.js"></script>
+	<script src="js/highlight.js"></script>
 </head>
 <body>
 
@@ -538,6 +539,34 @@
 			</div>
 
 		</div>
+
+		<!-- FORMS ====================================================================================================================== -->
+		<div id="forms" class="project-nav-box row">
+			<h2>Forms</h2>
+
+			<!-- stacked form -->
+			<h3>Stacked Form</h3>
+			<form id="stacked-form" class="form form-stacked">
+				<div class="form-row">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" placeholder="Selena Kyle">
+				</div>
+				<div class="form-row">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="name" placeholder="cats@gotyourtongue.com">
+				</div>
+				<div class="form-row">
+					<input type="submit" value="Go!">
+				</div>
+			</form>
+
+			<!-- horizontal form -->
+			<h3>Horizontal Form</h3>
+
+			<!-- mixed form -->
+			<h3>Advanced Form</h3>
+		</div>
+
 
 		<!-- LESS ====================================================================================================================== -->
 		<div id="less-mixins" class="project-nav-box row">

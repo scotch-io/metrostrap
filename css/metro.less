@@ -515,7 +515,7 @@ textarea:-moz-placeholder							{ color: @gray; }
 .text-right							{ text-align: right; }
 
 code 								{ background: @grayLighter; color: @primary-color; margin: 15px 0; padding: 4px 8px; }
-pre 								{ background: @grayLighter; color: @primary-color; padding: 10px 20px; }
+pre 								{ color: @primary-color; padding: 10px 20px; .border-radius(); }
 
 /* =============================================================================================
  * =COLORS
@@ -598,8 +598,7 @@ pre 								{ background: @grayLighter; color: @primary-color; padding: 10px 20p
 	input[type="color"]					{ background:@grayLightest; border:2px solid @primary-color; border-left:none; border-right:none; border-top:none; padding: 7px 14px; 
 		box-sizing		: border-box;
 		-moz-box-sizing		: border-box;
-		-webkit-box-sizing	: border-box;	
-		.transition();
+		-webkit-box-sizing	: border-box;
 	}
 
 	textarea:hover, 
