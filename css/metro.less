@@ -597,71 +597,70 @@ pre 								{ background: @grayLighter; color: @primary-color; padding: 10px 20p
 
 .form {
 
-textarea, 
-input[type="text"], 
-input[type="password"], 
-input[type="datetime"], 
-input[type="datetime-local"], 
-input[type="date"], 
-input[type="month"], 
-input[type="time"], 
-input[type="week"], 
-input[type="number"], 
-input[type="email"], 
-input[type="url"], 
-input[type="search"], 
-input[type="tel"], 
-input[type="color"]					{ background:@grayLightest; border:2px solid @primary-color; border-left:none; border-right:none; border-top:none; padding: 7px 14px; 
-	box-sizing		: border-box;
-	-moz-box-sizing		: border-box;
-	-webkit-box-sizing	: border-box;	
-	.transition();
-}
+	textarea, 
+	input[type="text"], 
+	input[type="password"], 
+	input[type="datetime"], 
+	input[type="datetime-local"], 
+	input[type="date"], 
+	input[type="month"], 
+	input[type="time"], 
+	input[type="week"], 
+	input[type="number"], 
+	input[type="email"], 
+	input[type="url"], 
+	input[type="search"], 
+	input[type="tel"], 
+	input[type="color"]					{ background:@grayLightest; border:2px solid @primary-color; border-left:none; border-right:none; border-top:none; padding: 7px 14px; 
+		box-sizing		: border-box;
+		-moz-box-sizing		: border-box;
+		-webkit-box-sizing	: border-box;	
+		.transition();
+	}
 
-textarea:hover, 
-input[type="text"]:hover, 
-input[type="password"]:hover, 
-input[type="datetime"]:hover, 
-input[type="datetime-local"]:hover, 
-input[type="date"]:hover, 
-input[type="month"]:hover, 
-input[type="time"]:hover, 
-input[type="week"]:hover, 
-input[type="number"]:hover, 
-input[type="email"]:hover, 
-input[type="url"]:hover, 
-input[type="search"]:hover, 
-input[type="tel"]:hover, 
-input[type="color"]:hover			{ outline:0; }
+	textarea:hover, 
+	input[type="text"]:hover, 
+	input[type="password"]:hover, 
+	input[type="datetime"]:hover, 
+	input[type="datetime-local"]:hover, 
+	input[type="date"]:hover, 
+	input[type="month"]:hover, 
+	input[type="time"]:hover, 
+	input[type="week"]:hover, 
+	input[type="number"]:hover, 
+	input[type="email"]:hover, 
+	input[type="url"]:hover, 
+	input[type="search"]:hover, 
+	input[type="tel"]:hover, 
+	input[type="color"]:hover			{ outline:0; }
 
-textarea:focus, 
-input[type="text"]:focus, 
-input[type="password"]:focus, 
-input[type="datetime"]:focus, 
-input[type="datetime-local"]:focus, 
-input[type="date"]:focus, 
-input[type="month"]:focus, 
-input[type="time"]:focus, 
-input[type="week"]:focus, 
-input[type="number"]:focus, 
-input[type="email"]:focus, 
-input[type="url"]:focus, 
-input[type="search"]:focus, 
-input[type="tel"]:focus, 
-input[type="color"]:focus			{ outline:none; }
+	textarea:focus, 
+	input[type="text"]:focus, 
+	input[type="password"]:focus, 
+	input[type="datetime"]:focus, 
+	input[type="datetime-local"]:focus, 
+	input[type="date"]:focus, 
+	input[type="month"]:focus, 
+	input[type="time"]:focus, 
+	input[type="week"]:focus, 
+	input[type="number"]:focus, 
+	input[type="email"]:focus, 
+	input[type="url"]:focus, 
+	input[type="search"]:focus, 
+	input[type="tel"]:focus, 
+	input[type="color"]:focus			{ outline:none; }
 
-input[type=submit]					{ background: @primary-color; border: none; color: @white; font-size: 90%; margin:5px 0; padding: 7px 14px; 
-	.transition();
-}
-input[type=submit]:hover			{ background: @primary-color-light; }
-input[type=submit]:focus			{ outline:none; }
+	input[type=submit]					{ background: @primary-color; border: none; color: @white; font-size: 90%; margin:5px 0; padding: 7px 14px; 
+		.transition();
+	}
+	input[type=submit]:hover			{ background: @primary-color-light; }
+	input[type=submit]:focus			{ outline:none; }
 
-textarea 							{ min-height:70px; }
-label 								{ line-height:1; }
-input[type=checkbox]				{ cursor:pointer; height:13px; float:left; width:13px; margin:0; padding:0; }
+	textarea 							{ min-height:70px; }
+	label 								{ line-height:1; }
+	input[type=checkbox]				{ cursor:pointer; height:13px; float:left; width:13px; margin:0; padding:0; }
 
-.form-row                           { margin-bottom: 15px; .clearfix(); }
-
+	.form-row                           { margin-bottom: 15px; .clearfix(); }
 }
 
 /* Stacked Form */
@@ -675,11 +674,11 @@ input[type=checkbox]				{ cursor:pointer; height:13px; float:left; width:13px; m
 .form-horizontal .control 			{ margin-left:140px; }
 
 /* Sizing */
-.input-mini							{  }
-.input-small						{  }
-.input-medium						{  }
-.input-large						{  }
-.input-supersize					{  }
+.input-mini							{ width:30px; }
+.input-small						{ width:50px; }
+.input-medium						{ width:80px; }
+.input-large						{ width:200px; }
+.input-supersize					{ width:500px; }
 
 /* Checkboxes */
 .switch								{ height:100px; position:relative; width:100px; }
@@ -744,7 +743,6 @@ button:hover				{ background: @primary-color-light; }
 .button-supersize			{ font-size: 200%; padding: 30px 60px; }
 
 /* Disabled */
-
 
 /* Background Colors */
 input.background-white, button.background-white						{ background: @white; }
