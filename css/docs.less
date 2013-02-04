@@ -1,3 +1,79 @@
 @import 'metro';
-.row 			{ margin-bottom:30px; }
-h2 				{ border-bottom:1px solid @grayDark; text-align:center; width:100%; }
+.row 			{ margin-bottom:30px; padding:30px 0; }
+h2 				{ border-bottom:1px solid @grayDark; margin-bottom:20px; padding:20px 0; text-align:center; width:100%; }
+
+/* =metro-bootstrap
+	------------------------------------------------------------------------- */
+	#metro-bootstrap 	{
+		width:100%;
+		.row 				{ margin-bottom:30px; }
+		#grid span			{ background:@grayLighter; font-size:10px; padding:5px 0; text-align:center; }
+	}
+
+		/* basic information
+		------------------------------------------------------------------------- */
+		#basic-information 					{ text-align:center; }
+			#basic-information h3 i 		{ color:@brown; margin-right:20px; }
+
+		/* colors
+		------------------------------------------------------------------------- */
+		.color-box 							{ color:@grayDarker; display:inline-block; text-align:center; }
+			.color-circle	 				{ display:block; height:75px; margin:0 auto 10px; width:75px; .border-radius(50%); }
+			#colors #magenta .color-circle 	{ background:@magenta; }
+			#colors #purple .color-circle 	{ background:@purple; }
+			#colors #teal .color-circle 	{ background:@teal; }
+			#colors #lime .color-circle 	{ background:@lime; }
+			#colors #brown .color-circle 	{ background:@brown; }
+			#colors #pink .color-circle 	{ background:@pink; }
+			#colors #mango .color-circle 	{ background:@mango; }
+			#colors #blue .color-circle 	{ background:@blue; }
+			#colors #red .color-circle 		{ background:@red; }
+			#colors #green .color-circle 	{ background:@green; }
+
+				#colors #magenta .color-circle:hover	{ background:lighten(@magenta, 20%); }
+				#colors #purple .color-circle:hover		{ background:lighten(@purple, 20%); }
+				#colors #teal .color-circle:hover		{ background:lighten(@teal, 20%); }
+				#colors #lime .color-circle:hover		{ background:lighten(@lime, 20%); }
+				#colors #brown .color-circle:hover		{ background:lighten(@brown, 20%); }
+				#colors #pink .color-circle:hover		{ background:lighten(@pink, 20%); }
+				#colors #mango .color-circle:hover		{ background:lighten(@mango, 20%); }
+				#colors #blue .color-circle:hover		{ background:lighten(@blue, 20%); }
+				#colors #red .color-circle:hover		{ background:lighten(@red, 20%); }
+				#colors #green .color-circle:hover		{ background:lighten(@green, 20%); }
+
+			#colors #gray .color-circle 				{ background:@gray; }
+			#colors #grayLight .color-circle 			{ background:@grayLight; }
+			#colors #grayLighter .color-circle 			{ background:@grayLighter; }
+			#colors #grayLightest .color-circle 		{ background:@grayLightest; }
+			#colors #grayDark .color-circle 			{ background:@grayDark; }
+			#colors #grayDarker .color-circle 			{ background:@grayDarker; }
+			#colors #grayDarkest .color-circle 			{ background:@grayDarkest; }
+
+			.color-code									{ color:@grayDark; display:block; }
+			
+		/* grid
+		------------------------------------------------------------------------- */
+		#grid-example 									{  }
+			.grid-boxes 								{ margin-bottom:20px; padding:0; }
+			.grid-boxes-inside span 					{ background:@gray; }
+			.grid-boxes span 							{ background:@grayLight; color:@grayDarker; padding:5px; text-align:center; .border-radius(); }
+
+		#grid-advanced-exmample 						{  }
+			#grid-advanced-example .row 				{  }
+
+		#advanced-left-section, #advanced-right-section 	{ background:@grayLight; padding:10px; .border-radius(); }
+
+		/* less mixins
+		------------------------------------------------------------------------- */
+		#rounded-corners  	{ .border-radius(); }
+		#rounded-all		{ .border-radius-all(4px, 4px, 0, 0); }
+
+		#opacity1			{ .opacity(1); }k
+		#opacity5			{ .opacity(.5); }
+		#opacity2			{ .opacity(0.2); }
+
+		#shadow 			{ .box-shadow(2px, 2px, 10px, #000, 0); }
+		#shadow-inside 		{ .box-shadow-inset(2px, 2px, 10px, #FF0000, 0); }
+
+		#gvert				{ .gradient-vertical(#C2C2C2, #838383); }
+		#ghorz				{ .gradient-horizontal(#C2C2C2, #838383); }
