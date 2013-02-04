@@ -733,9 +733,7 @@ input[type=checkbox]				{ cursor:pointer; height:13px; float:left; width:13px; m
 	.radio-button input:checked ~ span				{ .gradient-vertical(@grayLighter, @grayLightest); .box-shadow-inset(2px, 2px, 2px, 0, @gray); }
 
 /* Buttons ====================================================================================== */
-button 						{ background: @primary-color; border: none; color: @white; font-size: 90%; padding: 5px 12px; 
-	.transition();
-}
+button 						{ background: @primary-color; border: none; color: @white; font-size: 90%; padding: 5px 12px; }
 button:hover				{ background: @primary-color-light; }
 
 /* Sizes */
@@ -774,16 +772,16 @@ input.background-green:hover, button.background-green:hover			{ background: @gre
 /* =============================================================================================
  * =TABLES
 ================================================================================================ */
-table 					{ border-collapse:collapse; width: 100%; }
-thead 					{ font-weight: bold; }
-th, td 					{ padding: 5px 10px; }
+table 					{ border-collapse:collapse; width:100%; }
+thead 					{ font-weight:bold; }
+th, td 					{ padding:5px 10px; }
 
 /* Normal Table */
-.table tr 				{ border-bottom: 1px solid @grayLighter; }
+.table tr 				{ border-bottom:1px solid @grayLighter; }
 
 /* Bordered Table */
-.table-bordered			{ border-left: 1px solid @grayLighter; border-top: 1px solid @grayLighter; }
-	.table-bordered td	{ border-right: 1px solid @grayLighter; }
+.table-bordered			{ border-left:1px solid @grayLighter; border-top:1px solid @grayLighter; }
+	.table-bordered td	{ border-right:1px solid @grayLighter; }
 
 /* Striped Table */
 .table-striped tbody tr:nth-child(odd)	{ background: @grayLightest; }
