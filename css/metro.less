@@ -652,15 +652,17 @@ pre 								{ color: @primary-color; padding: 10px 20px; .border-radius(); }
 .form-stacked input[type=submit]	{ display: block; margin-top:10px; }
 
 /* Horizontal Form */
-.form-horizontal label 				{ float: left; margin-right: 15px; text-align: right; width: 125px; }
+.form-horizontal 					{  }
+.form-horizontal .form-row 			{ vertical-align:middle; }
+.form-horizontal label 				{ display:inline-block; margin-right: 15px; text-align:right; min-width:50px; }
 .form-horizontal input 				{  }
 .form-horizontal .control 			{ margin-left:140px; }
 
 /* Sizing */
-.input-mini							{ width:30px; }
-.input-small						{ width:50px; }
-.input-medium						{ width:80px; }
-.input-large						{ width:200px; }
+.input-mini							{ width:50px; }
+.input-small						{ width:90px; }
+.input-medium						{ width:180px; }
+.input-large						{ width:300px; }
 .input-supersize					{ width:500px; }
 
 /* Checkboxes */

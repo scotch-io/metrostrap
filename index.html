@@ -19,9 +19,10 @@
 	<title>Metro Bootstrap Demo</title>
 		
 	<!-- stylesheet stuffs -->
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic"> <!-- Fallback to Lato if Segoe UI is not on user's computer -->
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic"><!-- Fallback to Lato if Segoe UI is not on user's computer -->
 	<link rel="stylesheet" href="css/docs/normalize.css">
 	<link rel="stylesheet" href="css/docs/monokai.css">
+
 	<link rel="stylesheet/less" href="css/docs/docs.less">
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -544,27 +545,69 @@
 		<div id="forms" class="project-nav-box row">
 			<h2>Forms</h2>
 
-			<!-- stacked form -->
-			<h3>Stacked Form</h3>
-			<form id="stacked-form" class="form form-stacked">
-				<div class="form-row">
-					<label for="name">Name</label>
-					<input type="text" id="name" name="name" placeholder="Selena Kyle">
-				</div>
-				<div class="form-row">
-					<label for="email">Email</label>
-					<input type="email" id="email" name="name" placeholder="cats@gotyourtongue.com">
-				</div>
-				<div class="form-row">
-					<input type="submit" value="Go!">
-				</div>
-			</form>
+			<div class="span6 first">
+				<!-- stacked form -->
+				<h3>Stacked Form</h3>
+				<form id="stacked-form" class="form form-stacked">
+					<div class="form-row">
+						<label for="name">Name</label>
+						<input type="text" id="name" class="input-larger" name="name" placeholder="Selena Kyle">
+					</div>
+					<div class="form-row">
+						<label for="email">Email</label>
+						<input type="email" id="email" class="input-larger" name="name" placeholder="cats@gotyourtongue.com">
+					</div>
+					<div class="form-row">
+						<input type="submit" value="Go!">
+					</div>
+				</form>
 
-			<!-- horizontal form -->
-			<h3>Horizontal Form</h3>
+				<!-- horizontal form -->
+				<h3>Horizontal Form</h3>
+				<form id="horizontal-form" class="form form-horizontal">
+					<div class="form-row">
+						<label for="name">Name</label>
+						<input type="text" id="name" class="input-larger" name="name" placeholder="Selena Kyle">
+					</div>
+					<div class="form-row">
+						<label for="email">Email</label>
+						<input type="email" id="email" class="input-larger" name="name" placeholder="cats@gotyourtongue.com">
+					</div>
+					<div class="form-row">
+						<input type="submit" value="Go!">
+					</div>
+				</form>
 
-			<!-- mixed form -->
-			<h3>Advanced Form</h3>
+				<!-- mixed form -->
+				<h3>Advanced Form</h3>
+			</div>
+
+			<div class="span6">
+				<h3>Form Sizing</h3>
+				<form id="form-sizing" class="form form-stacked">
+					<div class="form-row">
+						<label>Small Size <span>.input-mini</span></label>
+						<input type="text" class="input-mini">
+					</div>
+					<div class="form-row">
+						<label>Small Size <span>.input-small</span></label>
+						<input type="text" class="input-small">
+					</div>
+					<div class="form-row">
+						<label>Small Size <span>.input-medium</span></label>
+						<input type="text" class="input-medium">
+					</div>
+					<div class="form-row">
+						<label>Small Size <span>.input-large</span></label>
+						<input type="text" class="input-large">
+					</div>
+					<div class="form-row">
+						<label>Small Size <span>.input-supersize</span></label>
+						<input type="text" class="input-supersize">
+					</div>
+				</form>
+			</div>
+
 		</div>
 
 
